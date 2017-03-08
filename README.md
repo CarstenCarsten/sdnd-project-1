@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 
 ###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I applied a gaussian blur to the picture to smooth out small image imperfections, and other extreme image values.  After that the canny algorithm was applied to find the edges in the picture. Next, I extracted the lower half of the picture, where the road normaly should be. This helps in removing edges from the picture, that are not the lane lines. Now I used the hough_lines algorithm to find long lines in the edges of the picture.
+My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I applied a gaussian blur to the picture to smooth out small image imperfections, and other extreme image values.  After that the canny algorithm was applied to find the edges in the picture. Next, I extracted the lower half of the picture, where the road normaly should be. This helps in removing edges from the picture that are not the lane lines. Now I used the hough_lines algorithm to find long lines in the edges of the picture.
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by:
 
@@ -38,6 +38,7 @@ One potential shortcoming would be what would happen when the car type changes. 
 
 Another shortcoming could be the detection of curves, currently only straight lines are implemented.
 
+As the challenge video shows, in some light and shadow situation, the lane line is not the part with the highest gradient.
 ###3. Suggest possible improvements to your pipeline
 
 A possible improvement would be to smooth out or average the x and y coordinates of the left and right lines. This would improve the "jumpiness" of the lines, and would smooth out found paralell lines.

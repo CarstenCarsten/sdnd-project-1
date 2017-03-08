@@ -26,10 +26,10 @@ My pipeline consisted of 5 steps. First, I converted the images to grayscale, th
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by:
 1. I calculate the slope (m) of the line, if the slope is too flat or too steep, I ignore the line.
-2. I calculate the y-intercept point (b) of the line, so that I can basically use y=mx+b transformed to x=(y-b)/m to draw a line from the bottom of the picture to the horizon, the lower 2/5 of the picture.
-3. If the slope is smaller than zero, the line goes from the left to the right, it has to be the left lane. If the slope is bigger than zero, the line goes from the right to the left. That has to be the right line.
-4. Then I calculate the distance of the points, to find the longest line.
-5. Then I only draw the longest left and the longest right line.
+1. I calculate the y-intercept point (b) of the line, so that I can basically use y=mx+b transformed to x=(y-b)/m to draw a line from the bottom of the picture to the horizon, the lower 2/5 of the picture.
+1. If the slope is smaller than zero, the line goes from the left to the right, it has to be the left lane. If the slope is bigger than zero, the line goes from the right to the left. That has to be the right line.
+1. Then I calculate the distance of the points, to find the longest line.
+1. Then I only draw the longest left and the longest right line.
 
 ###2. Identify potential shortcomings with your current pipeline
 

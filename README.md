@@ -25,11 +25,12 @@ The goals / steps of this project are the following:
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I applied a gaussian blur to the picture to smooth out small image imperfections, and other extreme image values.  After that the canny algorithm was applied to find the edges in the picture. Next, I extracted the lower half of the picture, where the road normaly should be. This helps in removing edges from the picture, that are not the lane lines. Now I used the hough_lines algorithm to find long lines in the edges of the picture.
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by:
+
 1. I calculate the slope (m) of the line, if the slope is too flat or too steep, I ignore the line.
-1. I calculate the y-intercept point (b) of the line, so that I can basically use y=mx+b transformed to x=(y-b)/m to draw a line from the bottom of the picture to the horizon, the lower 2/5 of the picture.
-1. If the slope is smaller than zero, the line goes from the left to the right, it has to be the left lane. If the slope is bigger than zero, the line goes from the right to the left. That has to be the right line.
-1. Then I calculate the distance of the points, to find the longest line.
-1. Then I only draw the longest left and the longest right line.
+2. I calculate the y-intercept point (b) of the line, so that I can basically use y=mx+b transformed to x=(y-b)/m to draw a line from the bottom of the picture to the horizon, the lower 2/5 of the picture.
+3. If the slope is smaller than zero, the line goes from the left to the right, it has to be the left lane. If the slope is bigger than zero, the line goes from the right to the left. That has to be the right line.
+4. Then I calculate the distance of the points, to find the longest line.
+5. Then I only draw the longest left and the longest right line.
 
 ###2. Identify potential shortcomings with your current pipeline
 
